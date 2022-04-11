@@ -1,6 +1,7 @@
 <template>
-  <h1>首页</h1>
-</template>、
+  <!-- <h1>首页</h1> -->
+  <div></div>
+</template>
 <script setup>
 import * as api from "@/api/index"
 import {reactive} from "vue"
