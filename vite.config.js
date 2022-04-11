@@ -1,6 +1,8 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import Components from 'unplugin-vue-components/vite'
+import { resolve } from 'path'
+// 按需加载插件
 import {
   AntDesignVueResolver
 } from 'unplugin-vue-components/resolvers'
@@ -12,6 +14,10 @@ export default defineConfig({
         AntDesignVueResolver(),
       ]
     })],
-  // your plugin installation
+
+    resolve: {
+      // 配置别名
+      alias: [{ find: '@', replacement: resolve(__dirname, 'src') }]
+    }
   
 })
