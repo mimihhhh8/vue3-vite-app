@@ -21,4 +21,5 @@ This template should help get you started developing with Vue 3 in Vite. The tem
 - 2、ref响应式
 - 3、reactive响应式
 - 4、事件 （@click="handle('你好',$event)"）
+- 5、内置组件suspense
 
