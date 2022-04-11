@@ -1,8 +1,7 @@
 
 <template>
-<!-- 状态管理 （数据管理，多个组件共享的数据放在状态管理中）
-1、不同组件使用相同数据
-2、vuex  - v4.x-->
+<!-- 使用的 Vite，你可以使用 unplugin-vue-components
+ 来进行按需加载。但是此插件无法处理非组件模块，如 message，这种组件需要手动加载：x-->
 <a-button type="primary">点我</a-button>
 
  
