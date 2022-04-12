@@ -1,11 +1,11 @@
 <template>
   <!-- 轮播倾斜的背景样式 -->
   <div class="homeswiper">
-    <div class="swiperBg">
+    <div class="swiperBg" :style="{background:data.bgColor}">
      
     </div>
   </div>
-   <a-carousel arrows autoplay>
+   <a-carousel arrows autoplay :beforeChange="changeFn">
         <template #prevArrow>
           <div class="custom-slick-arrow" style="left: 10px; z-index: 1">
             <left-circle-outlined />
@@ -24,6 +24,15 @@
 </template>
 <script setup>
 import { LeftCircleOutlined, RightCircleOutlined } from '@ant-design/icons-vue';
+import {reactive,defineProps} from 'vue'
+  const props = defineProps({banner:Array})
+  const data = reactive({
+    bgColor:props.banner[0].bg_color,
+  })
+  function changeFn(from, to) {
+    console.log(from, to);
+    data.bgColor = props.banner[to].bg_color
+  }
 </script>
 
 <style scoped lang="less">
