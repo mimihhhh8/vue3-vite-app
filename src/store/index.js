@@ -5,14 +5,19 @@ import { createStore } from 'vuex'
 const store = createStore({
   state () {
     return {
-      count: 0
+      count: 0,
+      isFullScreen: false,
     }
   },
   // 改变数据的方法
   mutations: {
     increment (state,payload) {
       state.count +=payload
-    }
+    },
+     // 设置全屏的方法(store.commit('setFullScreen',false)触发此方法)
+     setFullScreen(state,payload){
+      state.isFullScreen = payload
+  }
   },
 
   // 计算属性
@@ -20,7 +25,7 @@ const store = createStore({
     totalPrice(state){
       // 乘以价格
       return state.count * 10
-    }
+    },
   },
 
   // 后端异步ajax请求

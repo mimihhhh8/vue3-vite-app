@@ -12,6 +12,14 @@ export const getHomePage = (params) => {
   })
 }
 
+export const getProducts = (params) => {
+  return request({
+    method:"GET",
+    url:"/products",
+    params
+  })
+}
+
 // 响应拦截器
 request.interceptors.response.use((response)=>{
   if(response.status === 200){
