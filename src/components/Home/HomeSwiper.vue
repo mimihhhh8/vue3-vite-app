@@ -16,10 +16,18 @@
             <right-circle-outlined />
           </div>
         </template>
-        <div><h3>1</h3></div>
-        <div><h3>2</h3></div>
-        <div><h3>3</h3></div>
-        <div><h3>4</h3></div>
+        <div class="swiper-item" v-for="item,i in props.banner" :key="i">
+          <div class="swiper-box">
+            <div class="swiper-left">
+              <h3>{{item.sub_title}}</h3>
+            </div>
+              <div class="banner-right">
+            <img :src="item.imgsrc" alt="">
+          </div>
+          </div>
+        
+        </div>
+       
       </a-carousel>
 </template>
 <script setup>
@@ -46,6 +54,52 @@ import {reactive,defineProps} from 'vue'
    transform-origin: 0 0;//设置倾斜的原点
    transform: skew(0,-8deg);//水平轴不需要倾斜，y轴倾斜-8度 ,按照中间倾斜，应该按照左上角倾斜m
    transition: all 0.5s;
+ }
+
+ .swiper-item{
+   height: 575px;
+   .swiper-box{
+     display: flex;
+     min-width: 1200px;
+     justify-content: center;
+     .swiper-left{
+       width: 340px;
+       padding-right: 100px;
+       display: flex;
+       flex-direction: column;
+       align-items: flex-start;
+       margin-top: 100px;
+        }
+      h3{
+        font-size: 30px;
+        font-weight:900;
+        margin: 0;
+      }
+      h1{
+        font-size: 60px;
+        font-weight:900;
+        margin: 0;
+      }
+
+      .banner-right{
+        width: 600px;
+        height: 400px;
+        margin-top: 45px;
+        transform-origin: 0 100%;
+        transform: skew(0,-8deg);
+        transition: all 0.5s;
+        overflow: hidden;
+        border-radius: 20px;
+        border-bottom-right-radius: 80px;
+        img{
+            width: 600px;
+        height: 400px;
+          transform-origin: 0 100%;
+          transform: skew(0,8deg);
+          border-radius: 20px;
+        }
+      }
+   }
  }
 .ant-carousel :deep(.slick-slide) {
   text-align: center;
@@ -75,5 +129,6 @@ import {reactive,defineProps} from 'vue'
 .ant-carousel :deep(.slick-slide h3) {
   color: #fff;
 }
+
 
 </style>
