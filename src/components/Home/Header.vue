@@ -64,6 +64,10 @@ const onSearch = ()=>{
 .header{
   width: 100%;
   display: flex;
-  align-items: space-between;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  z-index: 10;
+  background: #fff;
 }
 </style>
